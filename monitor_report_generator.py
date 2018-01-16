@@ -6,7 +6,7 @@ def read_file(path):
     '''
     Read the file.
 
-    :param param1: location of the file
+    :param path: location of the file
     :returns: lines of file text
     '''
     with open(path, "r") as file:
@@ -17,7 +17,7 @@ def parsing_notification(file_content):
     '''
     Pre-process notifications.
 
-    :param param1: file content
+    :param file_content: file content
     :returns: array of notification objects
     :raise TypeError: unexpected data structure
     :raise ValueError: invalid timestamp
@@ -46,10 +46,10 @@ def update_node_state(node_name, notification, nodes, mode):
     '''
     Update recent node status.
 
-    :param param1: subject node name
-    :param param2: the notification object that caused this update
-    :param param3: status of nodes
-    :param param4: ALIVE/DEAD update
+    :param node_name: subject node name
+    :param notification: the notification object that caused this update
+    :param nodes: status of nodes
+    :param mode: ALIVE/DEAD update
     :returns: updated nodes
     '''
     
@@ -78,7 +78,7 @@ def print_report(nodes):
     '''
     Generate/Print the final report.
 
-    :param param1: status of nodes
+    :param nodes: status of nodes
     '''
     for name, node in nodes.iteritems():
         print name, node["state"], ', '.join(str(n) for n in node["notifications"])
@@ -88,7 +88,7 @@ def main(path):
     '''
     Main process.
 
-    :param param1: location of the file
+    :param path: location of the file
     '''
 
     # Get an array of all notifications
