@@ -17,7 +17,7 @@ def parsing_notification(file_content):
     '''
     Pre-process notifications.
 
-    :param param1: location of the file
+    :param param1: file content
     :returns: array of notification objects
     :raise TypeError: unexpected data structure
     :raise ValueError: invalid timestamp
