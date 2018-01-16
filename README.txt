@@ -28,3 +28,9 @@ Notice: - Please place the text file in the same folder
 
 
 Unit Test: python -m unittest test_notification
+
+Assumption: - UNKNOWN is when there are more than one notifications within 50ms timestamp
+              and there exist a notification prove node X is DEAD whereas another prove X is still ALIVE.
+              (do not know which is the most recent update --> UNKONWN)
+            - If a node is UNKNOWN, the report will also list all notification that causing this.
+              e.g. luke UNKNOWN 1508405807467 vader LOST luke, 1508405807457 luke FOUND r2d2
